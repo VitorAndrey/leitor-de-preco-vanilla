@@ -5,22 +5,16 @@ function init() {
 }
 
 function doAThing() {
-  const versions = window.electron.process.versions
-  replaceText('.electron-version', `Electron v${versions.electron}`)
-  replaceText('.chrome-version', `Chromium v${versions.chrome}`)
-  replaceText('.node-version', `Node v${versions.node}`)
+  const button = document.getElementById('button')
 
-  const ipcHandlerBtn = document.getElementById('ipcHandler')
-  ipcHandlerBtn?.addEventListener('click', () => {
-    window.electron.ipcRenderer.send('ping')
+  button?.addEventListener('click', () => {
+    const text = 'Era uma vez um cavaleiro com uma trança na testa...'
+
+    const msg = new SpeechSynthesisUtterance()
+    msg.text = text
+    msg.voice = speechSynthesis.getVoices()[0]
+    speechSynthesis.speak(msg)
   })
-}
-
-function replaceText(selector, text) {
-  const element = document.querySelector(selector)
-  if (element) {
-    element.innerText = text
-  }
 }
 
 init()

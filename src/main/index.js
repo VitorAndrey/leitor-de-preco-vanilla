@@ -3,12 +3,22 @@ import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 
+// import { registerIpcEvents } from './src/ipc-events.js'
+
+// app.commandLine.appendSwitch('enable-speech-dispatcher')
+app.commandLine.appendSwitch('enable-features', 'WebSpeechAPI')
+
+
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     width: 900,
     height: 670,
     show: false,
+    frame: false,
+    icon,
+    resizable: false,
+    fullscreen: true,
     autoHideMenuBar: true,
     ...(process.platform === 'linux' ? { icon } : {}),
     webPreferences: {
