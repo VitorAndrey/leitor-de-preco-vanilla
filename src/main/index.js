@@ -5,7 +5,7 @@ import icon from '../../resources/icon.png?asset'
 
 // import { registerIpcEvents } from './src/ipc-events.js'
 
-// app.commandLine.appendSwitch('enable-speech-dispatcher')
+app.commandLine.appendSwitch('enable-speech-dispatcher')
 app.commandLine.appendSwitch('enable-features', 'WebSpeechAPI')
 
 
