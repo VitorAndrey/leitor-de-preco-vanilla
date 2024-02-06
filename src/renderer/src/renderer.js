@@ -9,6 +9,8 @@ function doAThing() {
   const response = document.getElementById('response')
 
   button?.addEventListener('click', () => {
+    button.classList.toggle('cor')
+
     const text = 'Oi'
 
     const msg = new SpeechSynthesisUtterance()
