@@ -8,10 +8,15 @@ function doAThing() {
   const button = document.getElementById('button')
 
   button?.addEventListener('click', () => {
-    const text = 'Era uma vez um cavaleiro com uma trança na testa...'
+    const text = 'Oi'
 
     const msg = new SpeechSynthesisUtterance()
     msg.text = text
+
+    window.alert(speechSynthesis.getVoices()[0].name)
+    window.alert(speechSynthesis.getVoices()[1].name)
+    window.alert(speechSynthesis.getVoices()[2].name)
+
     msg.voice = speechSynthesis.getVoices()[0]
     speechSynthesis.speak(msg)
   })

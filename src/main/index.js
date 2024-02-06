@@ -8,7 +8,6 @@ import icon from '../../resources/icon.png?asset'
 app.commandLine.appendSwitch('enable-speech-dispatcher')
 app.commandLine.appendSwitch('enable-features', 'WebSpeechAPI')
 
-
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
