@@ -88,7 +88,7 @@ ipcMain.handle('speak', async (_, text) => {
 
   const payload = {
     audioConfig: {
-      audioEncoding: 'LINEAR16',
+      audioEncoding: 'MP3',
       effectsProfileId: ['small-bluetooth-speaker-class-device'],
       pitch: -3.5,
       speakingRate: 1.05
@@ -103,6 +103,5 @@ ipcMain.handle('speak', async (_, text) => {
   }
 
   const { data } = await axios.post(endpoint, payload)
-
-  console.log(data)
+  return data
 })
